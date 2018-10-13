@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<link href="bottom_style.css" rel="stylesheet" type="text/css" media="all">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+
+<head>
+	<title>Punk Out Brews</title>
+</head>
+<body>
+
+	<script src="jquery.js"></script>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.2/mustache.min.js"></script>
+
+	<script src="brew.js"></script>
+
+	<script>
+	//look at Moustache - found object properties 
+
+	//Elimnate whitespace https://www.browserling.com/tools/remove-all-whitespace
+
+	var template = '{{#data}}<div class="container--beer"><div class="aside"><img src="{{image_url}}"alt="{{name}}"style="height:100%;overflow:0auto;margin-right:auto;margin-left:auto;display:block;"></div><div class="content"><h3>{{name}}</h3><span class="sub">{{tagline}}</span><div class="content--text"><p>{{description}}</p></div><div class="content--list"><ul style="color:orange">{{#food_pairing}}<li class="list-item"> <span style="color:#000000">{{.}}</span></li>{{/food_pairing}}</ul></div></div></div>{{/data}}';
+
+		$.getJSON('https://api.punkapi.com/v2/beers?brewed_before=11-2012&abv_gt=6 ', function(data)
+		{
+			//initilaize
+			var htmlString = '';
+			console.log(Mustache);
+			//loops through the api array
+			data.forEach(function(beer){
+				//Binding data to the template placeholders
+				var html = Mustache.to_html(template, { data: beer });
+				console.log(html);
+				//appending the current beer to the html
+
+				htmlString = htmlString + html;
+				
+			});
+			$('#beer-section').html(htmlString);
+
+		});
+
+
+	</script>
+
+
+
+
+
+
+	<header>
+
+		<div class="topbar">
+			<div class="logo-container">
+				<div class="logo-img">
+					<img src="Images/icon_beer_mug.svg" />
+				</div>
+				<span class="logo-text">
+					PUNK OUT BREWS
+				</span>
+			</div>
+
+			<nav class="nav">
+
+
+				<div class="nav-item">
+					<span>Our Brews</span>
+				</div>
+				<div class="nav-item">
+					<span>Where To Buy</span>
+				</div>
+				<div class="nav-item">
+					<span>Contact</span>
+				</div>
+			</nav>
+		</div>
+
+		<div class="section">
+
+
+
+			<div class="inner">
+
+				<div class="hero">
+					<h2 class="hero-heading">Welcome</h2>
+					<div class="hero-desc">
+						Back in 1992 Phillipe Gonzolaz and Roger Carpendar set off on a mission to create a perfectly
+						balanced beer that would be refreshing, delicious, and infinitely drinkable. Their flagship lager
+						took off and soon after they started experimenting with different styles of beer and more unique
+						flavors and ingredients. Now Punk Out Brews has over 30 awesomely distinct award-winning
+						beers for every pallette.
+					</div>
+					<div class="tagline">
+						<div class="tagline-content">
+							Find your inner Punk
+							<div class="tagline-icon">
+								<img src="Images/icon_rocknroll_hand.svg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mailing-list">
+					<div class="mailing-list-heading">
+						Join our mailing list
+					</div>
+
+					<div class="mailing-list-content">
+						<div class="mailing-list-icon">
+							<img src="Images/icon_mailing_list.svg"/>
+						</div>
+
+						<div class="mailing-list-inner">
+							<div class="mailing-list-desc">
+								Sign up and we will send you info about exclusive beer premieres, festivals we will be at, and special promotions!
+							</div>
+							<input type="email" placeholder="beerafficionado@rockstar.com"/>
+							<div class="mailing-list-button">
+								<button>HECK YES!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</header>
+
+	<footer>
+
+		<div class="bottombar">
+
+			
+			<span class="footer-text">
+				THE SET LIST
+			</span>
+			
+
+
+
+			<nav class="nav">
+
+
+				<div class="nav-item">
+					<span>FILTER BY</span>
+				</div>
+
+				<div class="search">
+					<input type="text" placeholder="Search for Beer Name or Type" style="width: 400px;height:30px;">
+				</div>
+			</nav>
+
+
+		<!--nav class="set-nav">
+		
+				<div class="filter-container">
+					<div id="filter" class="nav-item">
+						<span onmouseover="doSomething()" >FILTER BY</button>
+					</div>
+				</div>
+
+				<div class="search">
+					 <input type="text" placeholder="Search for Beer Name or Type" style="width: 400px;height:30px;">
+				</div>
+
+			
+			</nav-->
+		</div>
+
+
+		<div class="section--beer" id="beer-section">
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<div class="set-list">
+
+
+
+		</div>
+	</footer>
+
+</body>
+</html>

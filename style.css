@@ -1,0 +1,327 @@
+
+/*Font*/
+ @font-face {
+    font-family: Bungee;
+    src: url('Fonts/fonts/Bungee/Bungee-Regular.ttf');
+
+}
+ @font-face {
+    font-family: Catamaran;
+    src: url('Fonts/fonts/Catamaran/Catamaran-ExtraLight.ttf');
+
+}
+h3{
+	font-family: Bungee;
+}
+
+/*Topbar*/
+.topbar {
+	background: #000;
+	font-family: Bungee;
+}
+
+.inner {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.logo-container {
+	display: inline-block;
+	height: 55px;
+	padding-left: 15px;
+	color: white;
+	text-transform: uppercase;
+}
+
+.logo-text {
+
+	display: inline-block;
+	padding-left: 7px;
+	line-height: 55px;
+	font-size: 19px;
+}
+
+.logo-img {
+	display: inline-block;
+	line-height: 55px;
+}
+
+.logo-img img {
+	position: relative;
+	top: 7px;
+	width: 22px;
+	transform: rotate(10deg);
+}
+
+.nav {
+
+    float: right;
+    display: inline-block;
+    margin-right: 5px;
+
+}
+
+.nav-item {
+	display: inline-block;
+	line-height: 55px;
+	padding: 0 17px;
+
+	text-transform: uppercase;
+	color: white;
+	font-size: 13px;
+}
+
+.nav-item:hover,
+.nav-item:active,
+.nav-item.active {
+	background: purple;
+}
+
+
+/*Hero*/
+.section {
+
+}
+
+.hero {
+	display: inline-block;
+	padding: 20px;
+	max-width: 550px;
+}
+
+.hero-heading {
+	font-family: Bungee;
+	font-weight: bold;
+	margin: 15px 0;
+}
+
+.hero-desc {
+	border-left: 5px solid purple;
+	padding-left: 10px;
+}
+
+.tagline {
+	font-family: Bungee;
+	text-align: center;
+}
+
+.tagline-icon {
+	display: inline-block;
+	padding-left: 5px;
+	position: relative;
+	top: 8px;
+}
+
+.tagline-icon img {
+	width: 22px;
+}
+
+
+
+.tagline-content {
+	padding: 10px 0;
+	color: purple;
+	display: inline-block;
+}
+
+.tagline-img {
+	padding-left: 5px;
+}
+
+
+
+.mailing-list {
+	float: right;
+	padding: 15px;
+	width: 350px;
+}
+
+.mailing-list-content {
+	border-radius: 0 0 4px 4px;
+	background: purple;
+}
+
+.mailing-list-inner {
+	padding: 5px 30px 30px 30px;
+}
+
+.mailing-list-icon {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.mailing-list-icon img {
+	width: 30px;
+}
+
+.mailing-list-desc {
+	color: white;
+	font-size: 12px;
+	padding: 10px 0;
+}
+
+
+.mailing-list input {
+	display: block;
+	width: 100%;
+	line-height: 30px;
+}
+
+.mailing-list-button {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.mailing-list-button button {
+	background: black;
+	border: 0;
+	color: white;
+	padding: 10px 25px;
+}
+
+.mailing-list-heading {
+	font-family: Bungee;
+	background: #000;
+	text-transform: uppercase;
+	padding: 15px 0;
+	text-align: center;
+	border-radius: 4px 4px 0 0;
+	color: white;
+	font-size: 20px;
+}
+
+
+
+
+.bottombar {
+    height: 55px;
+    border: 1px;
+    background-color: black;
+    margin-top:75px;
+}
+
+.bottom-container {
+
+	display: block;
+	padding-top: 40px;
+
+	
+	color: white;
+	text-transform: uppercase;
+
+}
+
+.footer-text {
+	float:left;
+	width:220px;
+    font-size: 19px;
+    font-family: Bungee;
+    color: white;
+    display: inline-block;
+    padding-left: 30px;
+    padding-top:15px;
+    height: 40px;
+}
+.footer-text::after{
+	content: attr(set-nav)
+}
+
+.set-list{
+	padding-top: 80px;
+
+}
+.set-list-content{
+
+	color: black;
+	font-size: 12px;
+	padding-top: 10px;
+
+}
+.filter-container{
+	display: inline-block;
+	height: 55px;
+	padding-left: 15px;
+}
+#filter{
+	font-family: Bungee;
+	text-transform: uppercase;
+	}
+
+
+.set-nav {
+	float: right;
+}
+.search {
+	float:right;
+    display: inline-block;
+    line-height: 0px;
+    background: url("Images/mag.jpg") no-repeat scroll 7px 7px;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+#btn{
+	background-color: white;
+}
+
+
+.content::before{
+	content: attr("beer-img");
+}
+
+.container--beer {
+	margin-top:30px;
+    height: 280px;
+    width: 800px;
+
+}
+
+.aside {
+
+    height: 100%;
+    width: 120px;
+    display: block;
+    margin-right:auto;
+    margin-left:auto;
+    float: left;
+
+}
+.content{
+	display: inline-block;
+	height:100%;
+	width: 679px;
+	float: right;
+
+}
+.sub{
+	font-family: Catamaran;
+	margin-top: 10px;
+	color: orange;
+	width: 100%;
+}
+
+.content--list {
+	position:relative;
+}
+
+ul li {
+
+	list-style-type: square;
+	color: orange;
+}
+
+ul::before {
+  display: block;
+  content: ' ';
+  background-image: url('Images/icon_food_pairing.svg');
+  background-size: 28px 28px;
+  height: 28px;
+  width: 28px;
+  position:left;
+
+  margin-right: 400px;
+}
+
+
